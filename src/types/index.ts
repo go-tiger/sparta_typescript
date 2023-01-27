@@ -30,3 +30,8 @@ export interface MyInterface {
 export interface MyInterfaceG<T = string> {
   value: T;
 }
+
+export type User = {
+  email: string;
+  name: string;
+};
