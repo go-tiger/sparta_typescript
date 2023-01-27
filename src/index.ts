@@ -90,3 +90,27 @@ const newUser: LessUserInfo = {
   // 생략시킨 email이 속해있어서 컴파일되지 않습니다
   // email: 'hello@world.hello',
 };
+
+// --
+
+type MyType = 'dog' | 'cat' | 'alpaca';
+/* 유니엇 타입에 속해있는 속성을 생략 */
+type ExcludedType = Exclude<MyType, 'cat' | 'alpaca'>;
+
+// ✅
+const onlyDogAllowed: ExcludedType = 'dog';
+// ❌
+// const noAlpaca: ExcludedType = 'alpaca';
+
+type OnChange = (isDone: boolean) => void;
+type GroupOfTypes = string | undefined | OnChange;
+
+/* GroupOfTypes에 OnChange 만 남긴다 */
+type FunctionType = Exclude<GroupOfTypes, string | undefined>;
+
+// ✅
+const onChangeHandler: FunctionType = isDone => isDone;
+console.log(onChangeHandler(true));
+
+// ❌
+// const today: FunctionType = 'great day';
