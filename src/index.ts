@@ -35,3 +35,19 @@ const myBubbleTeaOrder: Required<BubbleTeaOrder> = {
   tea: true,
   straw: true,
 };
+
+// --
+
+interface BackAccount {
+  accountNumber: string;
+  balance: bigint;
+}
+
+const myAccount: Readonly<BackAccount> = {
+  accountNumber: '1234',
+  balance: BigInt(1000000),
+};
+
+myAccount.balance = BigInt(0);
+
+console.log(myAccount);
