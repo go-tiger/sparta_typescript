@@ -145,4 +145,14 @@ type MyPet = 'dog' | 'cat' | 'alpaca';
 type ExtractedType = Extract<MyPet, 'alpaca' | 'cat'>;
 
 const onlyAlpacaOrCatAllowed: ExtractedType = 'cat'; // 또는 "alpaca"만 할당 가능
-console.log(onlyAlpacaOrCatAllowed);
+// console.log(onlyAlpacaOrCatAllowed);
+
+// --
+
+type QueryParam = string | string[] | undefined | null;
+type NonNullableQueryParam = NonNullable<QueryParam>;
+
+// 문자열은 허용되는 타입입니다
+const queryParam: NonNullableQueryParam = 'orders';
+// 허용되지 않습니다
+// const forbiddenQueryParam: NonNullableQueryParam = undefined;
