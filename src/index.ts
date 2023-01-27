@@ -1,5 +1,2 @@
-enum Color {
-	Red = "Red",
-	Green = "Green",
-	Blue = "Blue"
-}
+import { Color } from "./types";
+
