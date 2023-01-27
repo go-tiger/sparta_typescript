@@ -48,6 +48,26 @@ const myAccount: Readonly<BackAccount> = {
   balance: BigInt(1000000),
 };
 
-myAccount.balance = BigInt(0);
+// myAccount.balance = BigInt(0);
+// console.log(myAccount);
 
-console.log(myAccount);
+// --
+
+type Type = string[];
+type TypeII = Array<string>;
+
+type ObjectTypeRecord = Record<string, string>;
+type ObjectTypeObject = { [x: string]: string };
+
+type Country = 'Korea' | 'USA' | 'Canada' | 'UK';
+type CountryCode = 82 | 1 | 44;
+
+type CountryToCountryCode = Record<Country, CountryCode>;
+type CountryToCountryCodeObject = { [countryName in Country]: CountryCode };
+
+const Countries: CountryToCountryCode = {
+  Canada: 1,
+  Korea: 82,
+  USA: 1,
+  UK: 44,
+};
