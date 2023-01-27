@@ -137,5 +137,12 @@ const studentName: StudentName = {
   },
   isGraduated: true,
 };
+// console.log(studentName);
 
-console.log(studentName);
+// --
+
+type MyPet = 'dog' | 'cat' | 'alpaca';
+type ExtractedType = Extract<MyPet, 'alpaca' | 'cat'>;
+
+const onlyAlpacaOrCatAllowed: ExtractedType = 'cat'; // 또는 "alpaca"만 할당 가능
+console.log(onlyAlpacaOrCatAllowed);
