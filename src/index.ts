@@ -1,2 +1,1 @@
-import { Color } from "./types";
-
+import { Color } from './types';
