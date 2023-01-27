@@ -71,3 +71,22 @@ const Countries: CountryToCountryCode = {
   USA: 1,
   UK: 44,
 };
+
+// --
+
+interface UserInfo {
+  userName: string;
+  favoriteColor: string;
+  email: string;
+  password: string;
+}
+
+/* 새로운 타입을 만들어서 비밀번호랑 이메일을 생략 */
+type LessUserInfo = Omit<UserInfo, 'password' | 'email'>;
+
+const newUser: LessUserInfo = {
+  userName: 'pony',
+  favoriteColor: 'rainbow',
+  // 생략시킨 email이 속해있어서 컴파일되지 않습니다
+  // email: 'hello@world.hello',
+};
