@@ -1,3 +1,5 @@
+import exp from 'constants';
+
 export enum Color {
   Red = 'Red',
   Green = 'Green',
@@ -20,3 +22,11 @@ export interface ThingsInLife {
 //   colorOfPen: Color;
 //   keyboardArrow: Direction;
 // };
+
+export interface MyInterface {
+  value: string | number | string[] | number[] | boolean | boolean[];
+}
+
+export interface MyInterfaceG<T = string> {
+  value: T;
+}
