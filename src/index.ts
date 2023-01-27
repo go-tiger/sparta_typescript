@@ -114,3 +114,28 @@ console.log(onChangeHandler(true));
 
 // ❌
 // const today: FunctionType = 'great day';
+
+// --
+
+interface User {
+  firstName: string;
+  lastName: string;
+}
+
+interface Student {
+  user: User;
+  isGraduated: boolean;
+  school: string;
+}
+
+/* 특정 프로퍼티들만 뽑아서 사용 */
+type StudentName = Pick<Student, 'user' | 'isGraduated'>;
+const studentName: StudentName = {
+  user: {
+    firstName: 'winnie',
+    lastName: 'pooh',
+  },
+  isGraduated: true,
+};
+
+console.log(studentName);
